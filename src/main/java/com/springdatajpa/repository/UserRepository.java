@@ -1,6 +1,6 @@
-package com.jpa.repository;
+package com.springdatajpa.repository;
 
-import com.jpa.model.User;
+import com.springdatajpa.model.User;
 import org.springframework.data.repository.CrudRepository;
 
 

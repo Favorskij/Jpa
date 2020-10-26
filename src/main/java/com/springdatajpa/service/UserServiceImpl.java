@@ -1,7 +1,7 @@
-package com.jpa.service;
+package com.springdatajpa.service;
 
-import com.jpa.model.User;
-import com.jpa.repository.UserRepository;
+import com.springdatajpa.model.User;
+import com.springdatajpa.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

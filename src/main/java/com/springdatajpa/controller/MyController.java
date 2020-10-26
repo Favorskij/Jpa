@@ -1,7 +1,7 @@
-package com.jpa.controller;
+package com.springdatajpa.controller;
 
-import com.jpa.model.User;
-import com.jpa.service.UserService;
+import com.springdatajpa.model.User;
+import com.springdatajpa.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

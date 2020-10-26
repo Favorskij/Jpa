@@ -1,6 +1,6 @@
-package com.jpa.service;
+package com.springdatajpa.service;
 
-import com.jpa.model.User;
+import com.springdatajpa.model.User;
 
 public interface UserService {
 

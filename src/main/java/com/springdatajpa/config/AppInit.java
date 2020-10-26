@@ -1,4 +1,4 @@
-package com.jpa.config;
+package com.springdatajpa.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

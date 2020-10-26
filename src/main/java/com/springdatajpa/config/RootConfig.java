@@ -1,4 +1,4 @@
-package com.jpa.config;
+package com.springdatajpa.config;
 
 import org.hibernate.cfg.Environment;
 import org.springframework.context.annotation.Bean;
@@ -19,8 +19,8 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({"com.jpa.service"})
-@EnableJpaRepositories("com.jpa.repository")
+@ComponentScan({"com.springdatajpa.service"})
+@EnableJpaRepositories("com.springdatajpa.repository")
 public class RootConfig {
 
 
