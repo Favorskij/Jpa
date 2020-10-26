@@ -19,16 +19,22 @@ public class MyController {
     @GetMapping(value = "/")
     public String home () {
 
+        User user = userService.getUser("roma");
+
+        return user.getUsername();
+    }
+
+
+    @ResponseBody
+    @GetMapping(value = "/add")
+    public String save () {
+
         User user = new User();
-        user.setUsername("Gena");
+        user.setUsername("Vity");
 
         userService.save(user);
 
-        System.out.println(userService.findByUsername("roma").getUsername());
-
-
-        return userService.findByUsername("roma").getUsername();
-
+        return "Hello World !!!";
     }
 
 

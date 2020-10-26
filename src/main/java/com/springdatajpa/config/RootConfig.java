@@ -13,22 +13,25 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.sql.DataSource;
 import java.util.Properties;
 
+@EnableWebMvc
 @Configuration
 @EnableTransactionManagement
 @ComponentScan({"com.springdatajpa.service"})
 @EnableJpaRepositories("com.springdatajpa.repository")
-public class RootConfig {
+public class RootConfig implements WebMvcConfigurer {
 
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("com.testtest.model");
+        em.setPackagesToScan("com.springdatajpa.model");
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
@@ -42,7 +45,7 @@ public class RootConfig {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/testjpaspring?serverTimezone=UTC&useSSL=false");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/springdatajpa?serverTimezone=UTC&useSSL=false");
         dataSource.setUsername( "root" );
         dataSource.setPassword( "1234" );
         return dataSource;
